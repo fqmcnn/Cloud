@@ -1,0 +1,13 @@
+eureka:
+  client:
+    #制定服务注册中心的位置 查询服务和注册服务都需要依赖这个地址
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8762
+
+#服务注册中心名称
+spring:
+  application:
+    name: service-hi

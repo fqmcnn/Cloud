@@ -1,0 +1,20 @@
+server:
+  port: 8761
+
+#服务注册中心名称
+spring:
+  application:
+    name: eureka-server
+
+eureka:
+  #设置当前实例的主机名称 instance.hostname
+  instance:
+    hostname: localhost
+  client:
+    #springcloud作为注册中心  不需要在注册到其他注册中心去 register-with-eureka: false
+    register-with-eureka: false
+    #注册中心也不需要获取客户端信息（表示不需要从注册中心获取注册信息）fetch-registry: false
+    fetch-registry: false
+    #制定服务注册中心的位置 查询服务和注册服务都需要依赖这个地址
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
